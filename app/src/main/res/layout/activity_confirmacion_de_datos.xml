@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConfirmacionDeDatos">
+
+
+    <TextView
+        android:id="@+id/tvNombreCompleto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/nombre_completo"
+        />
+    <TextView
+        android:id="@+id/tvFechaNacimiento"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/fecha_nacimiento"
+        />
+    <TextView
+        android:id="@+id/tvTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/telefono"
+        />
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/email"
+        />
+    <TextView
+        android:id="@+id/tvDescripcionComentario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/descripcioncomentario"
+        />
+
+
+</LinearLayout>

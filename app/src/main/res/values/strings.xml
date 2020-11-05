@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">FormularioContactos</string>
+    <string name="nombre_completo">Gabriel Ithurralde</string>
+    <string name="fecha_nacimiento">02/05/75</string>
+    <string name="telefono">098989204</string>
+    <string name="email">gabrielithurralde@gmail.com</string>
+    <string name="descripcioncomentario">gabrielithurralde@gmail.com</string>
+    <string name="pnombre">nombre</string>
+    <string name="pfechadenacimiento">fechadenacimiento</string>
+    <string name="ptelefono">telefono</string>
+    <string name="pemail">email</string>
+    <string name="pdescripcioncomentario">descripcioncomentario</string>
+
+</resources>
