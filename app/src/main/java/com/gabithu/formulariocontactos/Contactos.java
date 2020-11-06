@@ -7,8 +7,11 @@ public class Contactos {
     private String telefono;
     private String email;
     private String descripcioncomentario;
+    private int foto;
 
-    public Contactos(String nombre, String fechanacimiento, String telefono, String email, String descripcioncomentario) {
+
+    public Contactos(int foto, String nombre, String fechanacimiento, String telefono, String email, String descripcioncomentario) {
+        this.foto=foto;
         this.nombre = nombre;
         this.fechanacimiento = fechanacimiento;
         this.telefono = telefono;
@@ -64,5 +67,13 @@ public class Contactos {
 
     public String getDescripcionComentario() {
         return null;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
     }
 }

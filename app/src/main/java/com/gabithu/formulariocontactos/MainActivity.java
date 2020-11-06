@@ -1,31 +1,47 @@
 package com.gabithu.formulariocontactos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private Object Contactos;
-    ArrayList<Contactos>
+    //private Object Contactos;
+    ArrayList<Contactos> contactos;
+    private RecyclerView listaContactos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Contactos = new ArrayList<Contactos>();
 
-        Contactos.add(new Contactos("Gabriel Ithurralde", "02/05/2020", "098989204", "gabrielithurralde@gmail.com", "comentario"));
-        Contactos.add(new Contactos("Sebastian Masullo", "02/05/2020", "22012051", "sebastianmasullo@gmail.com", "comentario"));
+        Toolbar miActionBar=(Toolbar) findViewById(R.id.miActionBar);
+        setSupportActionBar(miActionBar);
 
-        ArrayList<String> nombresContacto = new ArrayList<>();
+        listaContactos=(RecyclerView) findViewById(R.id.rvContactos);
+
+        LinearLayoutManager llm=new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+
+        listaContactos.setLayoutManager(llm);
+        inicializarListaContactos();
+        inicializaAdaptador();
+
+
+
+        /*ArrayList<String> nombresContacto = new ArrayList<>();
         for (Contactos contactos : Contactos) {
         nombresContacto.add(contactos.getNombre());
 
@@ -47,8 +63,31 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(getResources().getString(R.string.pdescripcioncomentario), Contactos.get(position).getDescripcionComentario());
 
                 startActivity(intent);
+                finish();
             }
         });
+        */
+    }
+
+    private void setSupportActionBar(Toolbar miActionBar) {
+    }
+
+    public void inicializaAdaptador(){
+        ContactoAdaptador adaptador = new ContactoAdaptador(contactos);
+        listaContactos.setAdapter(adaptador);
+    }
+
+    public void inicializarListaContactos(){
+        contactos = new ArrayList<Contactos>();
+
+        contactos.add(new Contactos(R.drawable.bicolor_dog,"Pichicho", "02/05/2020", "098989204", "gabrielithurralde@gmail.com", "comentario"));
+        contactos.add(new Contactos(R.drawable.blacky_dos"Oscurin", "02/05/2020", "22012051", "sebastianmasullo@gmail.com", "comentario"));
+        contactos.add(new Contactos(R.drawable.corona_dog,"Hipocondrio", "02/05/2020", "098989204", "gabrielithurralde@gmail.com", "comentario"));
+        contactos.add(new Contactos(R.drawable.whity_dos"Blaquin", "02/05/2020", "22012051", "sebastianmasullo@gmail.com", "comentario"));
+
+
+
+
 
     }
 }
